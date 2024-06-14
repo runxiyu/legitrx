@@ -1,306 +1,922 @@
-:root {
-  --light: #f4f4f4;
-  --cyan: #509c93;
-  --light-gray: #eee;
-  --medium-gray: #ddd;
-  --gray: #6a6a6a;
-  --dark: #444;
-  --darker: #222;
+/* This CSS file was copied from legitrx. */
 
-  --sans-font: "InterVar", -apple-system, BlinkMacSystemFont, "Roboto", "Segoe UI", sans-serif;
-  --display-font: "InterDisplay", -apple-system, BlinkMacSystemFont, "Roboto", "Segoe UI", sans-serif;
-  --mono-font: 'SF Mono', SFMono-Regular, ui-monospace, 'DejaVu Sans Mono', 'Roboto Mono', Menlo, Consolas, monospace;
+div#legitrx {
+	padding: 0em;
+	margin: 0em;
+	font-family: sans-serif;
+	font-size: 10pt;
+	color: #333;
+	background: white;
+	padding: 4px;
 }
 
-html {
-  background: var(--light);
-  -webkit-text-size-adjust: none;
-  font-family: var(--sans-font);
+div#legitrx a {
+	color: blue;
+	text-decoration: none;
 }
 
-pre {
-  font-family: var(--mono-font);
+div#legitrx a:hover {
+	text-decoration: underline;
 }
 
-::selection {
-  background: var(--medium-gray);
-  opacity: 0.3;
+div#legitrx table {
+	border-collapse: collapse;
 }
 
-* {
-  box-sizing: border-box;
-  padding: 0;
-  margin: 0;
+div#legitrx table#header {
+	width: 100%;
+	margin-bottom: 1em;
 }
 
-body {
-  max-width: 1000px;
-  padding: 0 13px;
-  margin: 40px auto;
+div#legitrx table#header td.logo {
+	width: 96px;
+	vertical-align: top;
 }
 
-main, footer {
-  font-size: 1rem;
-  padding: 0;
-  line-height: 160%;
+div#legitrx table#header td.main {
+	font-size: 250%;
+	padding-left: 10px;
+	white-space: nowrap;
 }
 
-main h1, h2, h3, strong {
-  font-family: var(--display-font);
-  font-weight: 500;
+div#legitrx table#header td.main a {
+	color: #000;
 }
 
-strong {
-  font-weight: 500;
+div#legitrx table#header td.form {
+	text-align: right;
+	vertical-align: bottom;
+	padding-right: 1em;
+	padding-bottom: 2px;
+	white-space: nowrap;
 }
 
-main h1 {
-  font-size: 20px;
-  padding: 10px 0 10px 0;
+div#legitrx table#header td.form form,
+div#legitrx table#header td.form input,
+div#legitrx table#header td.form select {
+	font-size: 90%;
 }
 
-main h2 {
-  font-size: 18px;
+div#legitrx table#header td.sub {
+	color: #777;
+	border-top: solid 1px #ccc;
+	padding-left: 10px;
 }
 
-main h2, h3 {
-  padding: 20px 0 15px 0;
+div#legitrx table.tabs {
+	border-bottom: solid 3px #ccc;
+	border-collapse: collapse;
+	margin-top: 2em;
+	margin-bottom: 0px;
+	width: 100%;
 }
 
-nav {
-  padding: 0.4rem 0 1.5rem 0;
+div#legitrx table.tabs td {
+	padding: 0px 1em;
+	vertical-align: bottom;
 }
 
-nav ul {
-  padding: 0;
-  margin: 0;
-  list-style: none;
-  padding-bottom: 20px;
+div#legitrx table.tabs td a {
+	padding: 2px 0.75em;
+	color: #777;
+	font-size: 110%;
 }
 
-nav ul li {
-  padding-right: 10px;
-  display: inline-block;
+div#legitrx table.tabs td a.active {
+	color: #000;
+	background-color: #ccc;
 }
 
-a {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  text-decoration: none;
-  word-wrap: break-word;
+/*
+div#legitrx table.tabs a[href^="http://"]:after, div#legitrx table.tabs a[href^="https://"]:after {
+	content: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAQAAAAnOwc2AAAAAmJLR0QA/4ePzL8AAAAJcEhZcwAACxMAAAsTAQCanBgAAAAHdElNRQfgAhcJDQY+gm2TAAAAHWlUWHRDb21tZW50AAAAAABDcmVhdGVkIHdpdGggR0lNUGQuZQcAAABbSURBVAhbY2BABs4MU4CwhYHBh2Erww4wrGFQZHjI8B8IgUIscJWyDHcggltQhI4zGDCcRwhChPggHIggP1QoAVmQkSETrGoHsiAEsACtBYN0oDAMbgU6EBcAAL2eHUt4XUU4AAAAAElFTkSuQmCC);
+	opacity: 0.5;
+	margin: 0 0 0 5px;
+}
+*/
+
+/* TODO: new logo */
+
+div#legitrx table.tabs td.form {
+	text-align: right;
 }
 
-a {
-  color: var(--darker);
-  border-bottom: 1.5px solid var(--medium-gray);
+div#legitrx table.tabs td.form form {
+	padding-bottom: 2px;
+	font-size: 90%;
+	white-space: nowrap;
 }
 
-a:hover {
-  border-bottom: 1.5px solid var(--gray);
+div#legitrx table.tabs td.form input,
+div#legitrx table.tabs td.form select {
+	font-size: 90%;
 }
 
-.index {
-  padding-top: 2em;
-  display: grid;
-  grid-template-columns: 6em 1fr minmax(0, 7em);
-  grid-row-gap: 0.5em;
-  min-width: 0;
+div#legitrx div.path {
+	margin: 0px;
+	padding: 5px 2em 2px 2em;
+	color: #000;
+	background-color: #eee;
 }
 
-.clone-url {
-  padding-top: 2rem;
+div#legitrx div.content {
+	margin: 0px;
+	padding: 2em;
+	border-bottom: solid 3px #ccc;
 }
 
-.clone-url pre {
-  color: var(--dark);
-  white-space: pre-wrap;
+
+div#legitrx table.list {
+	width: 100%;
+	border: none;
+	border-collapse: collapse;
 }
 
-.desc {
-  font-weight: normal;
-  color: var(--gray);
-  font-style: italic;
+div#legitrx table.list tr {
+	background: white;
 }
 
-.tree {
-  display: grid;
-  grid-template-columns: 10ch auto 1fr;
-  grid-row-gap: 0.5em;
-  grid-column-gap: 1em;
-  min-width: 0;
+div#legitrx table.list tr.logheader {
+	background: #eee;
 }
 
-.log {
-  display: grid;
-  grid-template-columns: 20rem minmax(0, 1fr);
-  grid-row-gap: 0.8em;
-  grid-column-gap: 8rem;
-  margin-bottom: 2em;
-  padding-bottom: 1em;
-  border-bottom: 1.5px solid var(--medium-gray);
+div#legitrx table.list tr:nth-child(even) {
+	background: #f7f7f7;
 }
 
-.log pre {
-  white-space: pre-wrap;
+div#legitrx table.list tr:nth-child(odd) {
+	background: white;
 }
 
-.mode, .size {
-  font-family: var(--mono-font);
-}
-.size {
-  text-align: right;
+div#legitrx table.list tr:hover {
+	background: #eee;
 }
 
-.readme pre {
-  white-space: pre-wrap;
+div#legitrx table.list tr.nohover {
+	background: white;
 }
 
-.readme {
-  background: var(--light-gray);
-  padding: 0.5rem;
+div#legitrx table.list tr.nohover:hover {
+	background: white;
 }
 
-.readme ul {
-  padding: revert;
+div#legitrx table.list tr.nohover-highlight:hover:nth-child(even) {
+	background: #f7f7f7;
 }
 
-.readme img {
-  max-width: 100%;
+div#legitrx table.list tr.nohover-highlight:hover:nth-child(odd) {
+	background: white;
 }
 
-.diff {
-  margin: 1rem 0 1rem 0;
-  padding: 1rem 0 1rem 0;
-  border-bottom: 1.5px solid var(--medium-gray);
+div#legitrx table.list th {
+	font-weight: bold;
+	/* color: #888;
+	border-top: dashed 1px #888;
+	border-bottom: dashed 1px #888;
+	*/
+	padding: 0.1em 0.5em 0.05em 0.5em;
+	vertical-align: baseline;
 }
 
-.diff pre {
-  overflow: scroll;
+div#legitrx table.list td {
+	border: none;
+	padding: 0.1em 0.5em 0.1em 0.5em;
 }
 
-.diff-stat {
-  padding: 1rem 0 1rem 0;
+div#legitrx table.list td.commitgraph {
+	font-family: monospace;
+	white-space: pre;
 }
 
-.commit-hash, .commit-email {
-  font-family: var(--mono-font);
+div#legitrx table.list td.commitgraph .column1 {
+	color: #a00;
 }
 
-.commit-email:before {
-  content: '<';
+div#legitrx table.list td.commitgraph .column2 {
+	color: #0a0;
 }
 
-.commit-email:after {
-  content: '>';
+div#legitrx table.list td.commitgraph .column3 {
+	color: #aa0;
 }
 
-.commit {
-  margin-bottom: 1rem;
+div#legitrx table.list td.commitgraph .column4 {
+	color: #00a;
 }
 
-.commit pre {
-  padding-bottom: 1rem;
-  white-space: pre-wrap;
+div#legitrx table.list td.commitgraph .column5 {
+	color: #a0a;
 }
 
-.diff-stat ul li {
-  list-style: none;
-  padding-left: 0.5em;
+div#legitrx table.list td.commitgraph .column6 {
+	color: #0aa;
 }
 
-.diff-add {
-  color: green;
+div#legitrx table.list td.logsubject {
+	font-family: monospace;
+	font-weight: bold;
 }
 
-.diff-del {
-  color: red;
+div#legitrx table.list td.logmsg {
+	font-family: monospace;
+	white-space: pre;
+	padding: 0 0.5em;
 }
 
-.diff-noop {
-  color: var(--gray);
+div#legitrx table.list td a {
+	color: black;
 }
 
-.ref {
-  font-family: var(--display-font);
-  font-size: 14px;
-  color: var(--gray);
-  display: inline-block;
-  padding-top: 0.7em;
+div#legitrx table.list td a.ls-dir {
+	font-weight: bold;
+	color: #00f;
 }
 
-.refs pre {
-  white-space: pre-wrap;
-  padding-bottom: 0.5rem;
+div#legitrx table.list td a:hover {
+	color: #00f;
 }
 
-.refs strong {
-  padding-right: 1em;
+div#legitrx img {
+	border: none;
 }
 
-.line-numbers {
-  white-space: pre-line;
-  -moz-user-select: -moz-none;
-  -khtml-user-select: none;
-  -webkit-user-select: none;
-  -o-user-select: none;
-  user-select: none;
-  display: flex;
-  float: left;
-  flex-direction: column;
-  margin-right: 1ch;
+div#legitrx input#switch-btn {
+	margin: 2px 0px 0px 0px;
 }
 
-.file-wrapper {
-  display: flex;
-  flex-direction: row;
-  grid-template-columns: 1rem minmax(0, 1fr);
-  gap: 1rem;
-  padding: 0.5rem;
-  background: var(--light-gray);
-  overflow-x: auto;
+div#legitrx td#sidebar input.txt {
+	width: 100%;
+	margin: 2px 0px 0px 0px;
 }
 
-.file-content {
-  background: var(--light-gray);
-  overflow-y: hidden;
-  overflow-x: auto;
+div#legitrx table#grid {
+	margin: 0px;
 }
 
-.diff-type {
-  color: var(--gray);
+div#legitrx td#content {
+	vertical-align: top;
+	padding: 1em 2em 1em 1em;
+	border: none;
 }
 
-.commit-info {
-  color: var(--gray);
-  padding-bottom: 1.5rem;
-  font-size: 0.85rem;
+div#legitrx div#summary {
+	vertical-align: top;
+	margin-bottom: 1em;
 }
 
-@media (max-width: 600px) {
-  .index {
-    grid-row-gap: 0.8em;
-  }
-
-  .log {
-    grid-template-columns: 1fr;
-    grid-row-gap: 0em;
-  }
-
-  .index {
-    grid-template-columns: 1fr;
-    grid-row-gap: 0em;
-  }
-
-  .index-name:not(:first-child) {
-    padding-top: 1.5rem;
-  }
-
-  .commit-info:not(:last-child) {
-    padding-bottom: 1.5rem;
-  }
-
-  pre {
-    font-size: 0.8rem;
-  }
+div#legitrx table#downloads {
+	float: right;
+	border-collapse: collapse;
+	border: solid 1px #777;
+	margin-left: 0.5em;
+	margin-bottom: 0.5em;
 }
+
+div#legitrx table#downloads th {
+	background-color: #ccc;
+}
+
+div#legitrx div#blob {
+	border: solid 1px black;
+}
+
+div#legitrx div.error {
+	color: red;
+	font-weight: bold;
+	margin: 1em 2em;
+}
+
+div#legitrx a.ls-blob, div#legitrx a.ls-dir, div#legitrx .ls-mod {
+	font-family: monospace;
+}
+
+div#legitrx td.ls-size {
+	text-align: right;
+	font-family: monospace;
+	width: 10em;
+}
+
+div#legitrx td.ls-mode {
+	font-family: monospace;
+	width: 10em;
+}
+
+div#legitrx table.blob {
+	margin-top: 0.5em;
+	border-top: solid 1px black;
+}
+
+div#legitrx table.blob td.hashes,
+div#legitrx table.blob td.lines {
+	margin: 0; padding: 0 0 0 0.5em;
+	vertical-align: top;
+	color: black;
+}
+
+div#legitrx table.blob td.linenumbers {
+	margin: 0; padding: 0 0.5em 0 0.5em;
+	vertical-align: top;
+	text-align: right;
+	border-right: 1px solid gray;
+}
+
+div#legitrx table.blob pre {
+	padding: 0; margin: 0;
+}
+
+div#legitrx table.blob td.linenumbers a,
+div#legitrx table.ssdiff td.lineno a {
+	color: gray;
+	text-align: right;
+	text-decoration: none;
+}
+
+div#legitrx table.blob td.linenumbers a:hover,
+div#legitrx table.ssdiff td.lineno a:hover {
+	color: black;
+}
+
+div#legitrx table.blame td.hashes,
+div#legitrx table.blame td.lines,
+div#legitrx table.blame td.linenumbers {
+	padding: 0;
+}
+
+div#legitrx table.blame td.hashes div.alt,
+div#legitrx table.blame td.lines div.alt {
+	padding: 0 0.5em 0 0.5em;
+}
+
+div#legitrx table.blame td.linenumbers div.alt {
+	padding: 0 0.5em 0 0;
+}
+
+div#legitrx table.blame div.alt:nth-child(even) {
+	background: #eee;
+}
+
+div#legitrx table.blame div.alt:nth-child(odd) {
+	background: white;
+}
+
+div#legitrx table.blame td.lines > div {
+	position: relative;
+}
+
+div#legitrx table.blame td.lines > div > pre {
+	padding: 0 0 0 0.5em;
+	position: absolute;
+	top: 0;
+}
+
+div#legitrx table.blame .oid {
+	font-size: 100%;
+}
+
+div#legitrx table.bin-blob {
+	margin-top: 0.5em;
+	border: solid 1px black;
+}
+
+div#legitrx table.bin-blob th {
+	font-family: monospace;
+	white-space: pre;
+	border: solid 1px #777;
+	padding: 0.5em 1em;
+}
+
+div#legitrx table.bin-blob td {
+	font-family: monospace;
+	white-space: pre;
+	border-left: solid 1px #777;
+	padding: 0em 1em;
+}
+
+div#legitrx table.nowrap td {
+	white-space: nowrap;
+}
+
+div#legitrx table.commit-info {
+	border-collapse: collapse;
+	margin-top: 1.5em;
+}
+
+div#legitrx div.legitrx-panel {
+	float: right;
+	margin-top: 1.5em;
+}
+
+div#legitrx div.legitrx-panel table {
+	border-collapse: collapse;
+	border: solid 1px #aaa;
+	background-color: #eee;
+}
+
+div#legitrx div.legitrx-panel th {
+	text-align: center;
+}
+
+div#legitrx div.legitrx-panel td {
+	padding: 0.25em 0.5em;
+}
+
+div#legitrx div.legitrx-panel td.label {
+	padding-right: 0.5em;
+}
+
+div#legitrx div.legitrx-panel td.ctrl {
+	padding-left: 0.5em;
+}
+
+div#legitrx table.commit-info th {
+	text-align: left;
+	font-weight: normal;
+	padding: 0.1em 1em 0.1em 0.1em;
+	vertical-align: top;
+}
+
+div#legitrx table.commit-info td {
+	font-weight: normal;
+	padding: 0.1em 1em 0.1em 0.1em;
+}
+
+div#legitrx div.commit-subject {
+	font-weight: bold;
+	font-size: 125%;
+	margin: 1.5em 0em 0.5em 0em;
+	padding: 0em;
+}
+
+div#legitrx div.commit-msg {
+	white-space: pre;
+	font-family: monospace;
+}
+
+div#legitrx div.notes-header {
+	font-weight: bold;
+	padding-top: 1.5em;
+}
+
+div#legitrx div.notes {
+	white-space: pre;
+	font-family: monospace;
+	border: solid 1px #ee9;
+	background-color: #ffd;
+	padding: 0.3em 2em 0.3em 1em;
+	float: left;
+}
+
+div#legitrx div.notes-footer {
+	clear: left;
+}
+
+div#legitrx div.diffstat-header {
+	font-weight: bold;
+	padding-top: 1.5em;
+}
+
+div#legitrx table.diffstat {
+	border-collapse: collapse;
+	border: solid 1px #aaa;
+	background-color: #eee;
+}
+
+div#legitrx table.diffstat th {
+	font-weight: normal;
+	text-align: left;
+	text-decoration: underline;
+	padding: 0.1em 1em 0.1em 0.1em;
+	font-size: 100%;
+}
+
+div#legitrx table.diffstat td {
+	padding: 0.2em 0.2em 0.1em 0.1em;
+	font-size: 100%;
+	border: none;
+}
+
+div#legitrx table.diffstat td.mode {
+	white-space: nowrap;
+}
+
+div#legitrx table.diffstat td span.modechange {
+	padding-left: 1em;
+	color: red;
+}
+
+div#legitrx table.diffstat td.add a {
+	color: green;
+}
+
+div#legitrx table.diffstat td.del a {
+	color: red;
+}
+
+div#legitrx table.diffstat td.upd a {
+	color: blue;
+}
+
+div#legitrx table.diffstat td.graph {
+	width: 500px;
+	vertical-align: middle;
+}
+
+div#legitrx table.diffstat td.graph table {
+	border: none;
+}
+
+div#legitrx table.diffstat td.graph td {
+	padding: 0px;
+	border: 0px;
+	height: 7pt;
+}
+
+div#legitrx table.diffstat td.graph td.add {
+	background-color: #5c5;
+}
+
+div#legitrx table.diffstat td.graph td.rem {
+	background-color: #c55;
+}
+
+div#legitrx div.diffstat-summary {
+	color: #888;
+	padding-top: 0.5em;
+}
+
+div#legitrx table.diff {
+	width: 100%;
+}
+
+div#legitrx table.diff td {
+	font-family: monospace;
+	white-space: pre;
+}
+
+div#legitrx table.diff td div.head {
+	font-weight: bold;
+	margin-top: 1em;
+	color: black;
+}
+
+div#legitrx table.diff td div.hunk {
+	color: #009;
+}
+
+div#legitrx table.diff td div.add {
+	color: green;
+}
+
+div#legitrx table.diff td div.del {
+	color: red;
+}
+
+div#legitrx .oid {
+	font-family: monospace;
+	font-size: 90%;
+}
+
+div#legitrx .left {
+	text-align: left;
+}
+
+div#legitrx .right {
+	text-align: right;
+}
+
+div#legitrx table.list td.reposection {
+	font-style: italic;
+	color: #888;
+}
+
+div#legitrx a.button {
+	font-size: 80%;
+	padding: 0em 0.5em;
+}
+
+div#legitrx a.primary {
+	font-size: 100%;
+}
+
+div#legitrx a.secondary {
+	font-size: 90%;
+}
+
+div#legitrx td.toplevel-repo {
+
+}
+
+div#legitrx table.list td.sublevel-repo {
+	padding-left: 1.5em;
+}
+
+div#legitrx ul.pager {
+	list-style-type: none;
+	text-align: center;
+	margin: 1em 0em 0em 0em;
+	padding: 0;
+}
+
+div#legitrx ul.pager li {
+	display: inline-block;
+	margin: 0.25em 0.5em;
+}
+
+div#legitrx ul.pager a {
+	color: #777;
+}
+
+div#legitrx ul.pager .current {
+	font-weight: bold;
+}
+
+div#legitrx span.age-mins {
+	font-weight: bold;
+	color: #080;
+}
+
+div#legitrx span.age-hours {
+	color: #080;
+}
+
+div#legitrx span.age-days {
+	color: #040;
+}
+
+div#legitrx span.age-weeks {
+	color: #444;
+}
+
+div#legitrx span.age-months {
+	color: #888;
+}
+
+div#legitrx span.age-years {
+	color: #bbb;
+}
+
+div#legitrx span.insertions {
+	color: #080;
+}
+
+div#legitrx span.deletions {
+	color: #800;
+}
+
+div#legitrx div.footer {
+	margin-top: 0.5em;
+	text-align: center;
+	font-size: 80%;
+	color: #ccc;
+}
+
+div#legitrx div.footer a {
+	color: #ccc;
+	text-decoration: none;
+}
+
+div#legitrx div.footer a:hover {
+	text-decoration: underline;
+}
+
+div#legitrx a.branch-deco {
+	color: #000;
+	margin: 0px 0.5em;
+	padding: 0px 0.25em;
+	background-color: #88ff88;
+	border: solid 1px #007700;
+}
+
+div#legitrx a.tag-deco {
+	color: #000;
+	margin: 0px 0.5em;
+	padding: 0px 0.25em;
+	background-color: #ffff88;
+	border: solid 1px #777700;
+}
+
+div#legitrx a.tag-annotated-deco {
+	color: #000;
+	margin: 0px 0.5em;
+	padding: 0px 0.25em;
+	background-color: #ffcc88;
+	border: solid 1px #777700;
+}
+
+div#legitrx a.remote-deco {
+	color: #000;
+	margin: 0px 0.5em;
+	padding: 0px 0.25em;
+	background-color: #ccccff;
+	border: solid 1px #000077;
+}
+
+div#legitrx a.deco {
+	color: #000;
+	margin: 0px 0.5em;
+	padding: 0px 0.25em;
+	background-color: #ff8888;
+	border: solid 1px #770000;
+}
+
+div#legitrx div.commit-subject a.branch-deco,
+div#legitrx div.commit-subject a.tag-deco,
+div#legitrx div.commit-subject a.tag-annotated-deco,
+div#legitrx div.commit-subject a.remote-deco,
+div#legitrx div.commit-subject a.deco {
+	margin-left: 1em;
+	font-size: 75%;
+}
+
+div#legitrx table.stats {
+	border: solid 1px black;
+	border-collapse: collapse;
+}
+
+div#legitrx table.stats th {
+	text-align: left;
+	padding: 1px 0.5em;
+	background-color: #eee;
+	border: solid 1px black;
+}
+
+div#legitrx table.stats td {
+	text-align: right;
+	padding: 1px 0.5em;
+	border: solid 1px black;
+}
+
+div#legitrx table.stats td.total {
+	font-weight: bold;
+	text-align: left;
+}
+
+div#legitrx table.stats td.sum {
+	color: #c00;
+	font-weight: bold;
+/*	background-color: #eee; */
+}
+
+div#legitrx table.stats td.left {
+	text-align: left;
+}
+
+div#legitrx table.vgraph {
+	border-collapse: separate;
+	border: solid 1px black;
+	height: 200px;
+}
+
+div#legitrx table.vgraph th {
+	background-color: #eee;
+	font-weight: bold;
+	border: solid 1px white;
+	padding: 1px 0.5em;
+}
+
+div#legitrx table.vgraph td {
+	vertical-align: bottom;
+	padding: 0px 10px;
+}
+
+div#legitrx table.vgraph div.bar {
+	background-color: #eee;
+}
+
+div#legitrx table.hgraph {
+	border: solid 1px black;
+	width: 800px;
+}
+
+div#legitrx table.hgraph th {
+	background-color: #eee;
+	font-weight: bold;
+	border: solid 1px black;
+	padding: 1px 0.5em;
+}
+
+div#legitrx table.hgraph td {
+	vertical-align: middle;
+	padding: 2px 2px;
+}
+
+div#legitrx table.hgraph div.bar {
+	background-color: #eee;
+	height: 1em;
+}
+
+div#legitrx table.ssdiff {
+	width: 100%;
+}
+
+div#legitrx table.ssdiff td {
+	font-size: 75%;
+	font-family: monospace;
+	white-space: pre;
+	padding: 1px 4px 1px 4px;
+	border-left: solid 1px #aaa;
+	border-right: solid 1px #aaa;
+}
+
+div#legitrx table.ssdiff td.add {
+	color: black;
+	background: #cfc;
+	min-width: 50%;
+}
+
+div#legitrx table.ssdiff td.add_dark {
+	color: black;
+	background: #aca;
+	min-width: 50%;
+}
+
+div#legitrx table.ssdiff span.add {
+	background: #cfc;
+	font-weight: bold;
+}
+
+div#legitrx table.ssdiff td.del {
+	color: black;
+	background: #fcc;
+	min-width: 50%;
+}
+
+div#legitrx table.ssdiff td.del_dark {
+	color: black;
+	background: #caa;
+	min-width: 50%;
+}
+
+div#legitrx table.ssdiff span.del {
+	background: #fcc;
+	font-weight: bold;
+}
+
+div#legitrx table.ssdiff td.changed {
+	color: black;
+	background: #ffc;
+	min-width: 50%;
+}
+
+div#legitrx table.ssdiff td.changed_dark {
+	color: black;
+	background: #cca;
+	min-width: 50%;
+}
+
+div#legitrx table.ssdiff td.lineno {
+	color: black;
+	background: #eee;
+	text-align: right;
+	width: 3em;
+	min-width: 3em;
+}
+
+div#legitrx table.ssdiff td.hunk {
+	color: black;
+	background: #ccf;
+	border-top: solid 1px #aaa;
+	border-bottom: solid 1px #aaa;
+}
+
+div#legitrx table.ssdiff td.head {
+	border-top: solid 1px #aaa;
+	border-bottom: solid 1px #aaa;
+}
+
+div#legitrx table.ssdiff td.head div.head {
+	font-weight: bold;
+	color: black;
+}
+
+div#legitrx table.ssdiff td.foot {
+	border-top: solid 1px #aaa;
+	border-left: none;
+	border-right: none;
+	border-bottom: none;
+}
+
+div#legitrx table.ssdiff td.space {
+	border: none;
+}
+
+div#legitrx table.ssdiff td.space div {
+	min-height: 3em;
+}
+
+/* Style definition file generated by highlight 3.9, http://www.andre-simon.de/ */
+/* Highlighting theme: Kwrite Editor */
+/* adapted for legitrx */
+div#legitrx table.blob .num { color:#b07e00; }
+div#legitrx table.blob .esc { color:#ff00ff; }
+div#legitrx table.blob .str { color:#bf0303; }
+div#legitrx table.blob .pps { color:#818100; }
+div#legitrx table.blob .slc { color:#838183; font-style:italic; }
+div#legitrx table.blob .com { color:#838183; font-style:italic; }
+div#legitrx table.blob .ppc { color:#008200; }
+div#legitrx table.blob .opt { color:#000000; }
+div#legitrx table.blob .lin { color:#555555; }
+div#legitrx table.blob .kwa { color:#000000; font-weight:bold; }
+div#legitrx table.blob .kwb { color:#0057ae; }
+div#legitrx table.blob .kwc { color:#000000; font-weight:bold; }
+div#legitrx table.blob .kwd { color:#010181; }
