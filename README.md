@@ -18,42 +18,42 @@ A git web frontend written in Go.
 
 ## INSTALLING
 
-Clone it, 'go build' it.
+Clone it, `go build` it.
 
 ## CONFIG
 
-Uses yaml for configuration. Looks for a 'config.yaml' in the current
-directory by default; pass the '--config' flag to point it elsewhere.
+Looks for a `legitrx.yaml` in the current directory by default; pass the
+`--config` flag to point it elsewhere.
 
-Example config.yaml:
-
-    repo:
-      scanPath: /var/www/git
-      readme:
-        - readme
-        - README
-        - readme.md
-        - README.md
-      mainBranch:
-        - master
-        - main
-      ignore:
-        - foo
-        - bar
-    dirs:
-      templates: ./templates
-      static: ./static
-    meta:
-      title: git good
-      description: i think it's a skill issue
-    server:
-      name: git.icyphox.sh
-      host: 127.0.0.1
-      port: 5555
+```yaml
+repo:
+  scanPath: /var/www/git
+  readme:
+    - readme
+    - README
+    - readme.md
+    - README.md
+  mainBranch:
+    - master
+    - main
+  ignore:
+    - foo
+    - bar
+dirs:
+  templates: ./templates
+  static: ./static
+meta:
+  title: git good
+  description: i think it's a skill issue
+server:
+  name: git.icyphox.sh
+  host: 127.0.0.1
+  port: 5555
+  ```
 
 These options are fairly self-explanatory, but of note are:
 
-- repo.scanPath: where all your git repos live (or die). legitrx doesn't
+- repo.scanPath: where all your git repos live. legitrx doesn't
   traverse subdirs yet.
 - dirs: use this to override the default templates and static assets.
 - repo.readme: readme files to look for.

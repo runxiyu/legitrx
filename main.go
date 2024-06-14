@@ -12,7 +12,7 @@ import (
 
 func main() {
 	var cfg string
-	flag.StringVar(&cfg, "config", "./config.yaml", "path to config file")
+	flag.StringVar(&cfg, "config", "./legitrx.yaml", "path to config file")
 	flag.Parse()
 
 	c, err := config.Read(cfg)
