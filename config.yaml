@@ -1,5 +1,5 @@
 repo:
-  scanPath: /var/www/git
+  scanPath: /srv/git
   readme:
     - readme
     - README
@@ -12,9 +12,9 @@ dirs:
   templates: ./templates
   static: ./static
 meta:
-  title: icy does git
-  description: come get your free software
+  title: legitrx
+  description: no description yet
 server:
-  name: git.icyphox.sh
-  host: 0.0.0.0
+  name: git.runxiyu.org
+  host: 127.0.0.1
   port: 5555

@@ -1,12 +1,12 @@
 [Unit]
-Description=legit Server
+Description=legitrx
 After=network-online.target
 Requires=network-online.target
 
 [Service]
-User=git
-Group=git
-ExecStart=/usr/bin/legit -config /etc/legit/config.yaml
+User=legitrx
+Group=legitrx
+ExecStart=/usr/local/bin/legitrx -config /etc/legitrx.yaml
 ProtectSystem=strict
 ProtectHome=strict
 NoNewPrivileges=true
