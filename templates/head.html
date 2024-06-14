@@ -7,7 +7,6 @@
     <link rel="icon" type="image/png" size="32x32" href="/static/legit.png">
     {{ if .parent }}
     <title>{{ .meta.Title }} &mdash; {{ .name }} ({{ .ref }}): {{ .parent }}/</title>
-
     {{ else if .path }}
     <title>{{ .meta.Title }} &mdash; {{ .name }} ({{ .ref }}): {{ .path }}</title>
     {{ else if .files }}

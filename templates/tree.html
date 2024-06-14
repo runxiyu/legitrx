@@ -1,9 +1,7 @@
 {{ define "tree" }}
 <!DOCTYPE html>
 <html>
-
 {{ template "head" . }}
-
   {{ template "repoheader" . }}
   <body>
     {{ template "nav" . }}
@@ -11,7 +9,6 @@
       {{ $repo := .name }}
       {{ $ref := .ref }}
       {{ $parent := .parent }}
-
       <div class="tree">
         {{ if $parent }}
         <div></div>
