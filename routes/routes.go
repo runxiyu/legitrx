@@ -13,8 +13,8 @@ import (
 	"strings"
 	"time"
 
-	"git.icyphox.sh/legit/config"
-	"git.icyphox.sh/legit/git"
+	"git.sr.ht/~runxiyu/legitrx/config"
+	"git.sr.ht/~runxiyu/legitrx/git"
 	"github.com/dustin/go-humanize"
 	"github.com/microcosm-cc/bluemonday"
 	"github.com/russross/blackfriday/v2"

@@ -1,4 +1,4 @@
-module git.icyphox.sh/legit
+module git.sr.ht/~runxiyu/legitrx
 
 go 1.22
 

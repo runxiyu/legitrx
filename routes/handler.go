@@ -3,7 +3,7 @@ package routes
 import (
 	"net/http"
 
-	"git.icyphox.sh/legit/config"
+	"git.sr.ht/~runxiyu/legitrx/config"
 )
 
 // Checks for gitprotocol-http(5) specific smells; if found, passes
