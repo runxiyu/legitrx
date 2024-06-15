@@ -9,7 +9,7 @@ import (
 	"path/filepath"
 	"strings"
 
-	"git.icyphox.sh/legit/git"
+	"git.sr.ht/~runxiyu/legitrx/git"
 )
 
 func (d *deps) Write404(w http.ResponseWriter) {
