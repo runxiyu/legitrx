@@ -2,7 +2,7 @@
 
 This is [Runxi Yu](https://runxiyu.org)'s fork of
 [icyphox](https://icyphox.sh/)'s
-[legitrx](https://git.icyphox.sh/legitrx/) project
+[legit](https://git.icyphox.sh/legit/) project
 
 The README hasn't really been updated yet and not much has happened in
 the fork yet. Just use upstream for now.
