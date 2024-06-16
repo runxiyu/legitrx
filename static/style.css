@@ -920,3 +920,315 @@ main#legitrx table.blob .kwa { color:#000000; font-weight:bold; }
 main#legitrx table.blob .kwb { color:#0057ae; }
 main#legitrx table.blob .kwc { color:#000000; font-weight:bold; }
 main#legitrx table.blob .kwd { color:#010181; }
+
+/*
+ * The following is copied from upstream legit.
+ * I don't want things to look insane as I am removing things,
+ * so let's just keep them for now.
+ */
+
+
+html#legit {
+  background: var(--light);
+  -webkit-text-size-adjust: none;
+  font-family: var(--sans-font);
+  --light: #f4f4f4;
+  --cyan: #509c93;
+  --light-gray: #eee;
+  --medium-gray: #ddd;
+  --gray: #6a6a6a;
+  --dark: #444;
+  --darker: #222;
+
+  --sans-font: "InterVar", -apple-system, BlinkMacSystemFont, "Roboto", "Segoe UI", sans-serif;
+  --display-font: "InterDisplay", -apple-system, BlinkMacSystemFont, "Roboto", "Segoe UI", sans-serif;
+  --mono-font: 'SF Mono', SFMono-Regular, ui-monospace, 'DejaVu Sans Mono', 'Roboto Mono', Menlo, Consolas, monospace;
+}
+
+html#legit pre {
+  font-family: var(--mono-font);
+}
+
+html#legit ::selection {
+  background: var(--medium-gray);
+  opacity: 0.3;
+}
+
+html#legit * {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html#legit body {
+  max-width: 1000px;
+  padding: 0 13px;
+  margin: 40px auto;
+}
+
+html#legit main, footer {
+  font-size: 1rem;
+  padding: 0;
+  line-height: 160%;
+}
+
+html#legit main h1, h2, h3, strong {
+  font-family: var(--display-font);
+  font-weight: 500;
+}
+
+html#legit strong {
+  font-weight: 500;
+}
+
+html#legit main h1 {
+  font-size: 20px;
+  padding: 10px 0 10px 0;
+}
+
+html#legit main h2 {
+  font-size: 18px;
+}
+
+html#legit main h2, h3 {
+  padding: 20px 0 15px 0;
+}
+
+html#legit nav {
+  padding: 0.4rem 0 1.5rem 0;
+}
+
+html#legit nav ul {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  padding-bottom: 20px;
+}
+
+html#legit nav ul li {
+  padding-right: 10px;
+  display: inline-block;
+}
+
+html#legit a {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  word-wrap: break-word;
+}
+
+html#legit a {
+  color: var(--darker);
+  border-bottom: 1.5px solid var(--medium-gray);
+}
+
+html#legit a:hover {
+  border-bottom: 1.5px solid var(--gray);
+}
+
+html#legit .index {
+  padding-top: 2em;
+  display: grid;
+  grid-template-columns: 6em 1fr minmax(0, 7em);
+  grid-row-gap: 0.5em;
+  min-width: 0;
+}
+
+html#legit .clone-url {
+  padding-top: 2rem;
+}
+
+html#legit .clone-url pre {
+  color: var(--dark);
+  white-space: pre-wrap;
+}
+
+html#legit .desc {
+  font-weight: normal;
+  color: var(--gray);
+  font-style: italic;
+}
+
+html#legit .tree {
+  display: grid;
+  grid-template-columns: 10ch auto 1fr;
+  grid-row-gap: 0.5em;
+  grid-column-gap: 1em;
+  min-width: 0;
+}
+
+html#legit .log {
+  display: grid;
+  grid-template-columns: 20rem minmax(0, 1fr);
+  grid-row-gap: 0.8em;
+  grid-column-gap: 8rem;
+  margin-bottom: 2em;
+  padding-bottom: 1em;
+  border-bottom: 1.5px solid var(--medium-gray);
+}
+
+html#legit .log pre {
+  white-space: pre-wrap;
+}
+
+html#legit .mode, .size {
+  font-family: var(--mono-font);
+}
+
+html#legit .size {
+  text-align: right;
+}
+
+html#legit .readme pre {
+  white-space: pre-wrap;
+}
+
+html#legit .readme {
+  background: var(--light-gray);
+  padding: 0.5rem;
+}
+
+html#legit .readme ul {
+  padding: revert;
+}
+
+html#legit .readme img {
+  max-width: 100%;
+}
+
+html#legit .diff {
+  margin: 1rem 0 1rem 0;
+  padding: 1rem 0 1rem 0;
+  border-bottom: 1.5px solid var(--medium-gray);
+}
+
+html#legit .diff pre {
+  overflow: scroll;
+}
+
+html#legit .diff-stat {
+  padding: 1rem 0 1rem 0;
+}
+
+html#legit .commit-hash, .commit-email {
+  font-family: var(--mono-font);
+}
+
+html#legit .commit-email:before {
+  content: '<';
+}
+
+html#legit .commit-email:after {
+  content: '>';
+}
+
+html#legit .commit {
+  margin-bottom: 1rem;
+}
+
+html#legit .commit pre {
+  padding-bottom: 1rem;
+  white-space: pre-wrap;
+}
+
+html#legit .diff-stat ul li {
+  list-style: none;
+  padding-left: 0.5em;
+}
+
+html#legit .diff-add {
+  color: green;
+}
+
+html#legit .diff-del {
+  color: red;
+}
+
+html#legit .diff-noop {
+  color: var(--gray);
+}
+
+html#legit .ref {
+  font-family: var(--display-font);
+  font-size: 14px;
+  color: var(--gray);
+  display: inline-block;
+  padding-top: 0.7em;
+}
+
+html#legit .refs pre {
+  white-space: pre-wrap;
+  padding-bottom: 0.5rem;
+}
+
+html#legit .refs strong {
+  padding-right: 1em;
+}
+
+html#legit .line-numbers {
+  white-space: pre-line;
+  -moz-user-select: -moz-none;
+  -khtml-user-select: none;
+  -webkit-user-select: none;
+  -o-user-select: none;
+  user-select: none;
+  display: flex;
+  float: left;
+  flex-direction: column;
+  margin-right: 1ch;
+}
+
+html#legit .file-wrapper {
+  display: flex;
+  flex-direction: row;
+  grid-template-columns: 1rem minmax(0, 1fr);
+  gap: 1rem;
+  padding: 0.5rem;
+  background: var(--light-gray);
+  overflow-x: auto;
+}
+
+html#legit .file-content {
+  background: var(--light-gray);
+  overflow-y: hidden;
+  overflow-x: auto;
+}
+
+html#legit .diff-type {
+  color: var(--gray);
+}
+
+html#legit .commit-info {
+  color: var(--gray);
+  padding-bottom: 1.5rem;
+  font-size: 0.85rem;
+}
+
+@media (max-width: 600px) {
+  html#legit .index {
+    grid-row-gap: 0.8em;
+  }
+
+  html#legit .log {
+    grid-template-columns: 1fr;
+    grid-row-gap: 0em;
+  }
+
+  html#legit .index {
+    grid-template-columns: 1fr;
+    grid-row-gap: 0em;
+  }
+
+  html#legit .index-name:not(:first-child) {
+    padding-top: 1.5rem;
+  }
+
+  html#legit .commit-info:not(:last-child) {
+    padding-bottom: 1.5rem;
+  }
+
+  html#legit pre {
+    font-size: 0.8rem;
+  }
+}
