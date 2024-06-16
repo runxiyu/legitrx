@@ -4,13 +4,7 @@
 {{ template "head" . }}
 <body>
 <main id="legitrx">
-<table id="header">
-	<tr>
-		<td class='logo' rowspan='2'><a href='/'><img src='/legitrx.png' alt='legitrx logo'/></a></td>
-		<td class='main'>{{ .meta.Title }}</td>
-		<tr><td class='sub'>{{ .meta.Description }}</td>
-	</tr>
-</table>
+{{ template "primaryheader" . }}
 <div class="content">
 	<table summary="repository list" class="list nowrap">
 		<tr class="nohover">
