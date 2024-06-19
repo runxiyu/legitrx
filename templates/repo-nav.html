@@ -1,0 +1,30 @@
+{{ define "reponav" }}
+<table class='tabs'>
+	<tr>
+		<td>
+			<!-- <a href='/pub/scm/linux/kernel/git/torvalds/linux.git/about/'>about</a> -->
+			<a class='active' href='/{{ .name }}'>summary</a>
+			<a href='/{{ .name }}/refs'>refs</a>
+			{{ if .ref }}
+			<a href='/{{ .name }}/log/{{ .ref }}'>log</a>
+			<a href='/{{ .name }}/tree/{{ .ref }}'>tree</a>
+			<!-- <a href='/pub/scm/linux/kernel/git/torvalds/linux.git/commit/'>commit</a>
+			<a href='/pub/scm/linux/kernel/git/torvalds/linux.git/diff/'>diff</a>
+			<a href='/pub/scm/linux/kernel/git/torvalds/linux.git/stats/'>stats</a> -->
+			{{ end }}
+		</td>
+		<td class='form'>
+			<form class='right' method='get' action='/{{ .name }}/log'> <!-- TODO: Also the Mux is broken -->
+				<select name='qt'>
+					<option value='grep'>log msg</option>
+					<option value='author'>author</option>
+					<option value='committer'>committer</option>
+					<option value='range'>range</option>
+				</select>
+				<input class='txt' type='search' size='10' name='q' value=''/>
+				<input type='submit' value='search'/>
+			</form>
+		</td>
+	</tr>
+</table>
+{{ end }}

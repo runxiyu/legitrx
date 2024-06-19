@@ -1,35 +1,115 @@
 {{ define "repo" }}
 <!DOCTYPE html>
-<html id="legit">
+<html>
 {{ template "head" . }}
-	<body>
-		{{ template "repoheader" . }}
-		{{ template "nav" . }}
-		<main>
-			{{ $repo := .name }}
-			<div class="log">
-				{{ range .commits }}
-				<div>
-					<div><a href="/{{ $repo }}/commit/{{ .Hash.String }}" class="commit-hash">{{ slice .Hash.String 0 8 }}</a></div>
-					<pre>{{ .Message }}</pre>
-				</div>
-				<div class="commit-info">
-					{{ .Author.Name }} <a href="mailto:{{ .Author.Email }}" class="commit-email">{{ .Author.Email }}</a>
-					<div>{{ .Author.When.Format "Mon, 02 Jan 2006 15:04:05 -0700" }}</div>
-				</div>
-				{{ end }}
-			</div>
-{{- if .readme }}
-			<article class="readme">
-				{{- .readme -}}
-			</article>
-{{- end -}}
-			<div class="clone-url">
-			<strong>clone</strong>
-				<pre>git clone https://{{ .servername }}/{{ .name }}</pre>
-			</div>
+<body>
+<main id='legitrx'>
+{{ template "repoheader" . }}
+{{ template "reponav" . }}
+<div class='content'>
+	<table summary='repository info' class='list nowrap'>
+		<tr class='nohover'>
+			<th class='left'>Branch</th>
+			<th class='left'>Commit message</th>
+			<th class='left'>Author</th>
+			<th class='left' colspan='2'>Age</th>
+		</tr>
+		<tr>
+			<td>
+				<a href='/{{ .name }}/log/{{ .ref }}'>{{ .ref }}</a>
+			</td>
+			<td>
+				<a href='/{{ .name }}/commit/{{ (index .commits 0).Hash.String }}'>{{ (index .commits 0).Message }}</a>
+			</td>
+			<td>{{ (index .commits 0).Author.Name }}</td>
+			<td colspan='2'>
+				<span>{{ (index .commits 0).Author.When.Format "Mon, 02 Jan 2006 15:04:05 -0700" }}</span><!-- TODO: Age -->
+				<!-- <span class='age-hours' data-ut='1718478212' title='2024-06-15 12:03:32 -0700'>14 hours</span> -->
+			</td>
+		</tr>
+		<!-- TODO: other refs -->
+		<!-- TODO: tags and past commits here? -->
+		{{/*
+		<tr class='nohover'>
+			<td colspan='5'>&nbsp;</td>
+		</tr>
+		<tr class='nohover'>
+			<th class='left'>Tag</th>
+			<th class='left'>Download</th>
+			<th class='left'>Author</th>
+			<th class='left' colspan='2'>Age</th>
+		</tr>
+		<tr>
+			<td>
+				<a href='/pub/scm/linux/kernel/git/torvalds/linux.git/tag/?h=v6.10-rc3'>v6.10-rc3</a>
+			</td>
+			<td>
+				<a href='/pub/scm/linux/kernel/git/torvalds/linux.git/snapshot/linux-6.10-rc3.tar.gz'>linux-6.10-rc3.tar.gz</a>&nbsp;&nbsp;
+			</td>
+			<td>Linus Torvalds</td>
+			<td colspan='2'>
+				<span class='age-days' data-ut='1717967983' title='2024-06-09 14:19:43 -0700'>7 days</span>
+			</td>
+		</tr>
+		<tr class='nohover'>
+			<td colspan='5'>
+				<a href='/pub/scm/linux/kernel/git/torvalds/linux.git/refs/tags'>[...]</a>
+			</td>
+		</tr>
+		<tr class='nohover'>
+			<td colspan='5'>&nbsp;</td>
+		</tr>
+		<tr class='nohover'>
+			<th class='left'>Age</th>
+			<th class='left'>Commit message</th>
+			<th class='left'>Author</th>
+			<th class='left'>Files</th>
+			<th class='left'>Lines</th>
+		</tr>
+		<tr>
+			<td>
+				<span class='age-hours' data-ut='1718478212' title='2024-06-15 12:03:32 -0700'>14 hours</span>
+			</td>
+			<td>
+				<a href='/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?id=a3e18a540541325a8c8848171f71e0d45ad30b2c'>Merge tag 'xfs-6.10-fixes-3' of git://git.kernel.org/pub/scm/fs/xfs/xfs-linux</a>
+				<span class='decoration'>
+					<a class='deco' href='/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?id=a3e18a540541325a8c8848171f71e0d45ad30b2c'>HEAD</a>
+					<a class='branch-deco' href='/pub/scm/linux/kernel/git/torvalds/linux.git/log/'>master</a>
+				</span>
+			</td>
+			<td>Linus Torvalds</td>
+			<td>1</td>
+			<td>
+				<span class='deletions'>-3</span>/
+				<span class='insertions'>+4</span>
+			</td>
+		</tr>
+		<tr class='nohover'>
+			<td colspan='5'>
+				<a href='/pub/scm/linux/kernel/git/torvalds/linux.git/log/'>[...]</a>
+			</td>
+		</tr>
+		*/}}
+		<tr class='nohover'>
+			<td colspan='5'>&nbsp;</td>
+		</tr>
+	</table>
+	<article class="readme">
+		{{- .readme -}}
+	</article>
+	<table summary="clone info" class="list nowrap">
+		<tr class='nohover'>
+			<th class='left' colspan='1'>Clone</th>
+		</tr>
+		<tr>
+			<td colspan='1'>
+				<a rel='vcs-git' href='https://{{ .servername }}/{{ .name }}' title='{{ .name }} repo'>https://{{ .servername }}/{{ .name }}</a>
+			</td>
+		</tr>
+	</table>
+</div>
 {{ template "foot" . }}
-		</main>
-	</body>
+</main>
+</body>
 </html>
 {{ end }}

@@ -1,12 +1,27 @@
 {{ define "repoheader" }}
-<header>
-	<h2>
-	<a href="/">all repos</a>
-	 &mdash; {{ .name }}
-		{{ if .ref }}
-		<span class="ref">@ {{ .ref }}</span>
-		{{ end }}
-	</h2>
-	<h3 class="desc">{{ .desc }}</h3>
-</header>
+<table id='header'>
+	<tr>
+		<td class='logo' rowspan='2'>
+			<a href='/'>
+				<img src='/legitrx.png' alt='legitrx logo'/>
+			</a>
+		</td>
+		<td class='main'>
+			<a href='/'>index</a> : 
+			<a href='/{{ .name }}'>{{ .name }}</a>
+		</td>
+		<td class='form'>
+			<form method='get'>
+				<select name='h' onchange='this.form.submit();'>
+					<option value='{{ .ref }}' selected='selected'>{{ .ref }}</option><!-- TODO: Make this actually work -->
+				</select>
+				<input type='submit' value='switch'/>
+			</form>
+		</td>
+	</tr>
+	<tr>
+		<td class='sub'>{{ .desc }}</td>
+		<!-- <td class='sub right'></td> TODO: Author -->
+	</tr>
+</table>
 {{ end }}
