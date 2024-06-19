@@ -1,51 +1,52 @@
 {{ define "tree" }}
 <!DOCTYPE html>
-<html id="legit">
+<html>
 {{ template "head" . }}
 	<body>
-		{{ template "repoheader" . }}
-		{{ template "nav" . }}
-		<main>
-			{{ $repo := .name }}
-			{{ $ref := .ref }}
-			{{ $parent := .parent }}
-			<div class="tree">
-				{{ if $parent }}
-				<div></div>
-				<div></div>
-				<div><a href="/{{ $repo }}/tree/{{ $ref }}/{{ .dotdot }}">..</a></div>
-				{{ end }}
-				{{ range .files }}
-				{{ if not .IsFile }}
-				<div class="mode">{{ .Mode }}</div>
-				<div class="size">{{ .Size }}</div>
-				<div>
+		<main id="legitrx">
+			{{ template "repoheader" . }}
+			{{ template "reponav" . }}
+			<div class="content">
+				<table summary="tree listing" class="list">
+					<tr class="nohover">
+						<th class="left">Mode</th>
+						<th class="left">Name</th>
+						<th class="right">Size</th>
+						<th />
+					</tr>
+					{{ $repo := .name }}
+					{{ $ref := .ref }}
+					{{ $parent := .parent }}
 					{{ if $parent }}
-					<a href="/{{ $repo }}/tree/{{ $ref }}/{{ $parent }}/{{ .Name }}">{{ .Name }}/</a>
-					{{ else }}
-					<a href="/{{ $repo }}/tree/{{ $ref }}/{{ .Name }}">{{ .Name }}/</a>
+					<tr>
+						<td class="ls-mode">d---------</td>
+						<td><a class="ls-blob" href="/{{ $repo }}/tree/{{ $ref }}/{{ .dotdot }}">..</a></td>
+						<td class="ls-size">TODO</td>
+						<td>
+							TODO
+							<a class="button" href="">log</a><a class="button" href="">stats</a>
+							<a class="button" href="">plain</a>
+							
+						</td>
+					</tr>
 					{{ end }}
-				</div>
-				{{ end }}
-				{{ end }}
-				{{ range .files }}
-				{{ if .IsFile }}
-				<div class="mode">{{ .Mode }}</div>
-				<div class="size">{{ .Size }}</div>
-				<div>
-					{{ if $parent }}
-					<a href="/{{ $repo }}/blob/{{ $ref }}/{{ $parent }}/{{ .Name }}">{{ .Name }}</a>
-					{{ else }}
-					<a href="/{{ $repo }}/blob/{{ $ref }}/{{ .Name }}">{{ .Name }}</a>
+					{{ range .files }}
+					<tr>
+						<td class="ls-mode">{{ .Mode }}</td>
+	                                        {{ if $parent }}
+						<td><a class="ls-blob" href="/{{ $repo }}/tree/{{ $ref }}/{{ $parent }}/{{ .Name }}">{{ .Name }}/</a></td>
+	                                        {{ else }}
+						<td><a class="ls-blob" href="/{{ $repo }}/tree/{{ $ref }}/{{ .Name }}">{{ .Name }}/</a></td>
+	                                        {{ end }}
+						<td class="ls-size">{{ .Size }}</td>
+						<td>
+							TODO (& blame)
+						</td>
+					</tr>
 					{{ end }}
-				</div>
-				{{ end }}
-				{{ end }}
+				</table>
 			</div>
-			<article>
-				<pre>{{- if .readme }}{{ .readme }}{{- end -}}</pre>
-			</article>
-{{ template "foot" . }}
+			{{ template "foot" . }}
 		</main>
 	</body>
 </html>
