@@ -6,7 +6,8 @@ At its current state, you should not use this fork. Use upstream instead.
 
 ## Features
 
-- Customizable templates and stylesheets. The default one is adapted from cgit.
+- Customizable templates and stylesheets.
+  (I tried to make it look like Cgit but now I want it to look like git.sr.ht)
 - Cloning over HTTPS.
 - Not CGI.
 
