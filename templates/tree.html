@@ -34,9 +34,17 @@
 					<tr>
 						<td class="ls-mode">{{ .Mode }}</td>
 	                                        {{ if $parent }}
+						{{ if .IsFile }}
+						<td><a class="ls-blob" href="/{{ $repo }}/blob/{{ $ref }}/{{ $parent }}/{{ .Name }}">{{ .Name }}</a></td>
+						{{ else }}
 						<td><a class="ls-blob" href="/{{ $repo }}/tree/{{ $ref }}/{{ $parent }}/{{ .Name }}">{{ .Name }}/</a></td>
+						{{ end }}
 	                                        {{ else }}
+						{{ if .IsFile }}
+						<td><a class="ls-blob" href="/{{ $repo }}/blob/{{ $ref }}/{{ .Name }}">{{ .Name }}</a></td>
+						{{ else }}
 						<td><a class="ls-blob" href="/{{ $repo }}/tree/{{ $ref }}/{{ .Name }}">{{ .Name }}/</a></td>
+						{{ end }}
 	                                        {{ end }}
 						<td class="ls-size">{{ .Size }}</td>
 						<td>
