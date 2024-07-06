@@ -1,5 +1,5 @@
 repo:
-  scanPath: /home/runxiyu/gittest
+  scanPath: /home/runxiyu/.local/share/barepos
   readme:
     - readme
     - README
