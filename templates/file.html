@@ -2,13 +2,13 @@
 <!DOCTYPE html>
 <html>
 	{{ template "head" . }}
-	{{ template "repoheader" . }}
 	<body>
+		{{ template "repoheader" . }}
 		{{ template "nav" . }}
 		<main>
 			<p>{{ .path }} (<a style="color: gray" href="?raw=true">view raw</a>)</p>
 			<div class="file-wrapper">
-			<pre>{{- .content -}}</pre>
+				<pre>{{- .content -}}</pre>
 			</div>
 		</main>
 	</body>

@@ -2,12 +2,11 @@
 <!DOCTYPE html>
 <html>
 {{ template "head" . }}
-
-	<header>
-		<h1>{{ .meta.Title }}</h1>
-		<h2>{{ .meta.Description }}</h2>
-	</header>
 	<body>
+		<header>
+			<h1>{{ .meta.Title }}</h1>
+			<h2>{{ .meta.Description }}</h2>
+		</header>
 		<main>
 			<div class="index">
 			{{ range .info }}

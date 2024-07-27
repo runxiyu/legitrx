@@ -1,23 +1,22 @@
 {{ define "log" }}
 <!DOCTYPE html>
 <html>
-{{ template "head" . }}
-
-	{{ template "repoheader" . }}
+	{{ template "head" . }}
 	<body>
+		{{ template "repoheader" . }}
 		{{ template "nav" . }}
 		<main>
 			{{ $repo := .name }}
 			<div class="log">
 				{{ range .commits }}
-				<div>
-					<div><a href="/{{ $repo }}/commit/{{ .Hash.String }}" class="commit-hash">{{ slice .Hash.String 0 8 }}</a></div>
-					<pre>{{ .Message }}</pre>
-				</div>
-				<div class="commit-info">
-					{{ .Author.Name }} <a href="mailto:{{ .Author.Email }}" class="commit-email">{{ .Author.Email }}</a>
-					<div>{{ .Author.When.Format "Mon, 02 Jan 2006 15:04:05 -0700" }}</div>
-				</div>
+					<div>
+						<div><a href="/{{ $repo }}/commit/{{ .Hash.String }}" class="commit-hash">{{ slice .Hash.String 0 8 }}</a></div>
+						<pre>{{ .Message }}</pre>
+					</div>
+					<div class="commit-info">
+						{{ .Author.Name }} <a href="mailto:{{ .Author.Email }}" class="commit-email">{{ .Author.Email }}</a>
+						<div>{{ .Author.When.Format "Mon, 02 Jan 2006 15:04:05 -0700" }}</div>
+					</div>
 				{{ end }}
 			</div>
 		</main>
