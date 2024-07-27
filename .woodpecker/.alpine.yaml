@@ -1,0 +1,11 @@
+skip_clone: false
+
+steps:
+  build:
+    when:
+      branch: []
+      event: []
+    image: alpine
+    commands:
+      - apk add --no-cache openssl-dev go
+      - go build
