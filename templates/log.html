@@ -1,7 +1,10 @@
 {{ define "log" }}
 <!DOCTYPE html>
 <html>
-	{{ template "head" . }}
+	<head>
+		{{ template "generichead" . }}
+		<title>{{ .meta.Title }} &mdash; {{ .name }}: log</title>
+	</head>
 	<body>
 		{{ template "repoheader" . }}
 		{{ template "nav" . }}

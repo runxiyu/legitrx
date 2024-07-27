@@ -1,8 +1,10 @@
 {{ define "404" }}
 <!DOCTYPE html>
 <html>
-	<title>404 Not Found</title>
-	{{ template "head" . }}
+	<head>
+		{{ template "generichead" . }}
+		<title>404 Not Found</title>
+	</head>
 	<body>
 		{{ template "nav" . }}
 		<main>

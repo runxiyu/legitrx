@@ -1,7 +1,10 @@
 {{ define "refs" }}
 <!DOCTYPE html>
 <html>
-	{{ template "head" . }}
+	<head>
+		{{ template "generichead" . }}
+		<title>{{ .meta.Title }} &mdash; {{ .name }}: refs</title>
+	</head>
 	<body>
 		{{ template "repoheader" . }}
 		{{ template "nav" . }}

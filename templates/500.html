@@ -1,8 +1,10 @@
 {{ define "500" }}
 <!DOCTYPE html>
 <html>
-	<title>500 Internal Server Error</title>
-	{{ template "head" . }}
+	<head>
+		{{ template "generichead" . }}
+		<title>500 Internal Server Error</title>
+	</head>
 	<body>
 		{{ template "nav" . }}
 		<main>

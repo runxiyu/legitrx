@@ -1,7 +1,16 @@
 {{ define "tree" }}
 <!DOCTYPE html>
 <html>
-	{{ template "head" . }}
+	<head>
+		{{ template "generichead" . }}
+		{{ if .parent }}
+			<title>{{ .meta.Title }} &mdash; {{ .name }} ({{ .ref }}): {{ .parent }}/</title>
+		{{ else if .files }}
+			<title>{{ .meta.Title }} &mdash; {{ .name }} ({{ .ref }})</title>
+		{{ else }}
+			<title>{{ .meta.Title }} &mdash; {{ .name }} ({{ .ref }}): BROKEN???</title>
+		{{ end }}
+	</head>
 	<body>
 		{{ template "repoheader" . }}
 		{{ template "nav" . }}

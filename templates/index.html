@@ -1,7 +1,10 @@
 {{ define "index" }}
 <!DOCTYPE html>
 <html>
-{{ template "head" . }}
+	<head>
+		{{ template "generichead" . }}
+		<title>{{ .meta.Title }}</title>
+	</head>
 	<body>
 		<header>
 			<h1>{{ .meta.Title }}</h1>

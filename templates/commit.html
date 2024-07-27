@@ -1,7 +1,10 @@
 {{ define "commit" }}
 <!DOCTYPE html>
 <html>
-	{{ template "head" . }}
+	<head>
+		{{ template "generichead" . }}
+		<title>{{ .meta.Title }} &mdash; {{ .name }}: {{ .commit.This }}</title>
+	</head>
 	<body>
 		{{ template "repoheader" . }}
 		{{ template "nav" . }}

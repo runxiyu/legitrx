@@ -1,7 +1,10 @@
 {{ define "file" }}
 <!DOCTYPE html>
 <html>
-	{{ template "head" . }}
+	<head>
+		{{ template "generichead" . }}
+		<title>{{ .meta.Title }} &mdash; {{ .name }} ({{ .ref }}): {{ .path }}</title>
+	</head>
 	<body>
 		{{ template "repoheader" . }}
 		{{ template "nav" . }}
