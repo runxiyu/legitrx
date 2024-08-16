@@ -13,7 +13,7 @@ dirs:
   static: ./static
 meta:
   title: legitrx
-  description: no description yet
+  description: Runxi Yu's git server thing
 server:
   name: git.runxiyu.org
   host: 127.0.0.1
